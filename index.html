@@ -193,6 +193,11 @@
             font-weight: 400;
         }
 
+        .hero-desc {
+            margin-bottom: 2.5rem;
+            max-width: 450px;
+        }
+
         .hero-image {
             position: relative;
             width: 100%;
@@ -203,6 +208,8 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            /* Prioritize the top/face of the image so his head doesn't get cut off on laptop view */
+            object-position: center 15%; 
             border-radius: 200px 200px 0 0;
             box-shadow: 0 20px 40px rgba(0,0,0,0.08);
         }
@@ -241,17 +248,18 @@
             color: var(--gold);
         }
 
+        .lessons-intro {
+            text-align: center;
+            max-width: 950px;
+            margin: 0 auto 4rem auto;
+            color: #A0A4A8;
+        }
+
         .lessons-container {
             display: grid;
             grid-template-columns: 1.3fr 1fr;
             gap: 4rem;
             align-items: center;
-        }
-
-        .lessons-intro {
-            text-align: left;
-            margin-bottom: 3rem;
-            color: #A0A4A8;
         }
 
         /* Locked 2x2 Grid for Instruction Cards */
@@ -435,11 +443,10 @@
 
         .contact-photo {
             width: 100%;
-            max-width: 800px; /* Made larger to span nicely beneath the section */
-            aspect-ratio: 3/2;
-            object-fit: cover;
+            max-width: 550px; 
+            height: auto; 
             border-radius: 4px;
-            margin: 4rem auto 0 auto; /* Added breathing room above the photo */
+            margin: 4rem auto 0 auto;
             display: block;
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
@@ -548,6 +555,10 @@
                 text-align: center;
                 order: 2;
             }
+            .hero-desc {
+                margin-left: auto;
+                margin-right: auto;
+            }
             .hero-image {
                 order: 1;
                 height: 50vh;
@@ -555,9 +566,11 @@
             .hero-image img {
                 border-radius: 100px 100px 0 0;
             }
-            .about-image, .lessons-image, .media-image {
+            .about-image, .media-image {
                 order: -1;
             }
+            /* The .lessons-image naturally falls below .lessons-content because of DOM order */
+            
             .ig-custom-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -642,11 +655,11 @@
             <div class="hero-text">
                 <h1>Alejandro Lombo</h1>
                 <h2>Flutist & Educator</h2>
-                <p style="margin-bottom: 2.5rem; max-width: 450px;">A dedicated orchestral performer and passionate educator bringing refined artistry to the concert stage and the teaching studio.</p>
+                <p class="hero-desc">A dedicated orchestral performer and passionate educator bringing refined artistry to the concert stage and the teaching studio.</p>
                 <a href="#contact" class="btn">Inquire for Lessons</a>
             </div>
             <div class="hero-image">
-                <img src="https://lh3.googleusercontent.com/d/1BwDbNKlkuz-j5-jeS9WbOv9J8TXtkc-D" alt="Alejandro Lombo Classical Flute">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20headshot.jpeg" alt="Alejandro Lombo Classical Flute">
             </div>
         </div>
     </section>
@@ -655,7 +668,7 @@
     <section id="about">
         <div class="about-container">
             <div class="about-image">
-                <img src="https://lh3.googleusercontent.com/d/1EjqeFy5ItmQsc5FlUJC_OOd2SPfNBPgK" alt="Alejandro Lombo Portrait">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20KCS%20piccolo.jpg" alt="Alejandro Lombo Portrait">
             </div>
             <div class="about-text">
                 <h2 class="section-title" style="text-align: left;">About Alejandro</h2>
@@ -679,27 +692,27 @@
         <h2 class="section-title">Flute Instruction</h2>
         <h3 class="section-subtitle">Kansas City & Online</h3>
         
+        <p class="lessons-intro">Great musicianship requires more than talent. It takes curiosity, discipline, patience, and a willingness to confront what needs improvement. My teaching balances the pursuit of technical and artistic excellence with a reminder of what makes music worth pursuing: the ability to create something meaningful, unexpected, and even magical. I want students to leave each lesson with a clearer understanding of their craft, the tools to continue improving independently, and a deeper appreciation for the role music can play in their lives. The habits developed through serious musical study, including creative problem-solving, perseverance, and the ability to accept and apply critical feedback, are valuable far beyond the practice room.</p>
+
         <div class="lessons-container">
             <div class="lessons-content">
-                <p class="lessons-intro">"My teaching philosophy centers on nurturing the unique musical voice of every student. Whether building fundamental technique or refining advanced repertoire, I strive to cultivate confidence, artistry, and a lifelong love for music."</p>
-
                 <!-- Locked 2x2 Grid -->
                 <div class="lessons-grid">
                     <div class="lesson-card">
                         <h3>All-State & Regional</h3>
-                        <p>Targeted preparation for district and all-state band or orchestra auditions, focusing on standard excerpts and composure.</p>
+                        <p>Learn how to prepare smarter, not just practice longer. From audition-specific practice hacks and efficient excerpt preparation to performance-day strategies, develop the tools to maximize your preparation, avoid common pitfalls, and walk into auditions with confidence.</p>
                     </div>
                     <div class="lesson-card">
                         <h3>Solo & Ensemble</h3>
-                        <p>Detailed coaching on solo literature and chamber works, emphasizing tone production and phrasing.</p>
+                        <p>Go beyond playing the notes to become a compelling performer. Refine tone, phrasing, and musical expression while developing stage presence, confident body language, and the ability to connect with an audience. Learn to perform with poise, personality, and artistic intention.</p>
                     </div>
                     <div class="lesson-card">
                         <h3>College Auditions</h3>
-                        <p>Rigorous, structured preparation for university and conservatory admissions with polished excellence.</p>
+                        <p>Rigorous and structured preparation designed to guide aspiring music majors through every stage of the university or conservatory admissions process. From choosing competitive repertoire and crafting polished pre-screening recordings to mastering live audition psychology, develop a clear roadmap that transforms daunting requirements into a manageable, confident audition.</p>
                     </div>
                     <div class="lesson-card">
-                        <h3>Fundamental Building</h3>
-                        <p>Comprehensive instruction for all levels on embouchure development, scale fluency, and technical precision.</p>
+                        <h3>Fundamentals & Practice Techniques</h3>
+                        <p>Refine the essential skills behind expressive, effortless playing. From tone development and embouchure efficiency to scales, articulation, and technical facility, lessons emphasize deliberate practice, efficient problem-solving, and the development of a reliable technical foundation.</p>
                     </div>
                 </div>
 
@@ -710,7 +723,7 @@
             
             <!-- Photo Spot for Teaching -->
             <div class="lessons-image">
-                <img src="https://lh3.googleusercontent.com/d/10UGEPqrez7ZaiyAs38TAuUBmpXMiNI_z" alt="Alejandro Lombo Teaching">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/laco%20fellows%20x%20skye%20amber%20photography%20__067.jpeg" alt="Alejandro Lombo Teaching">
             </div>
         </div>
     </section>
@@ -723,7 +736,7 @@
         <div class="media-container">
             <!-- Photo Spot for Media -->
             <div class="media-image">
-                <img src="https://lh3.googleusercontent.com/d/1VrFcVpAPC9OBktwqp1ae9Dkb1Z7mXBFZ" alt="Alejandro Lombo Performing in the Kansas City Symphony">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20headshot%20square.png" alt="Alejandro Lombo Performing in the Kansas City Symphony">
             </div>
 
             <div class="media-grid">
@@ -749,49 +762,49 @@
             
             <!-- Image 1 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1718pAHpirGOqCtGgiX98Sv1LrTA-c759" alt="Instagram Post 1">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20Het.jpeg" alt="Instagram Post 1">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 2 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1ZemhEeLBUSSbfE9stk3mq6an_IY6Z1od" alt="Instagram Post 2">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20JC.jpeg" alt="Instagram Post 2">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 3 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1fbe-ea8bntbnqMwsze9L24cklV8eak3b" alt="Instagram Post 3">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20HSO.jpeg" alt="Instagram Post 3">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 4 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1PXqGolf-EhZp4mqgg3cuCfTRdVGao3ca" alt="Instagram Post 4">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20KCS.jpeg" alt="Instagram Post 4">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 5 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1YELMpuPACFpU8xDG8W6QW5MmfSuFP5o1" alt="Instagram Post 5">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20FOLK.jpeg" alt="Instagram Post 5">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 6 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1TIgUk9TS9C9Eg5JptiZzFfZdldy323H4" alt="Instagram Post 6">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20MG%20S.jpeg" alt="Instagram Post 6">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 7 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1sAoQ_cd-qXqCfEKj8t_QSjPdAoW2dWyB" alt="Instagram Post 7">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20S%20MG.jpeg" alt="Instagram Post 7">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
             
             <!-- Image 8 -->
             <a href="https://www.instagram.com/alexlombo.flute" target="_blank" class="ig-custom-item">
-                <img src="https://lh3.googleusercontent.com/d/1HG20zu062Pe_5MCY1St2OPZf9K7S1jIg" alt="Instagram Post 8">
+                <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/AL%20DD%20LB.jpeg" alt="Instagram Post 8">
                 <div class="ig-overlay"><span>View on IG</span></div>
             </a>
 
@@ -848,7 +861,7 @@
         </div>
         
         <!-- Contact Photo Centered perfectly below the contact-wrapper -->
-        <img src="https://lh3.googleusercontent.com/d/1TUrlvqxmrkNhcDIltytJn3LpHy61dP7p" alt="Contact Alejandro" class="contact-photo">
+        <img src="https://pub-cb0ab208716c47d0bd04b6b14e7b1f8a.r2.dev/photos/IMG_0425.jpeg" alt="Contact Alejandro" class="contact-photo">
     </section>
 
     <!-- Footer -->
